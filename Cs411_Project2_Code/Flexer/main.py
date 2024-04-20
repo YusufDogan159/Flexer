@@ -134,6 +134,10 @@ class MainWindow(QMainWindow):
     def navigateToUrl(self):
         url = self.urlBar.text()
         self.getCurrentBrowser().setUrl(QUrl(url))
+    def navigateToUrl(self):
+        url = self.urlBar.text()
+        self.getCurrentBrowser().setUrl(QUrl(url))
+
 
     def updateUrl(self, q, browser=None):
         if browser == self.getCurrentBrowser():
@@ -152,6 +156,8 @@ class MainWindow(QMainWindow):
             self.reloadButton.disconnect()
             self.reloadButton.triggered.connect(self.getCurrentBrowser().reload)
 
+    def getCurrentBrowser(self):
+        return self.tabs.currentWidget()
     def getCurrentBrowser(self):
         return self.tabs.currentWidget()
 
