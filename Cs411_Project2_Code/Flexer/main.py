@@ -164,9 +164,11 @@ class MainWindow(QMainWindow):
     def addBookmark(self):
         # Get current page URL and title
         url = self.getCurrentBrowser().url().toString()
+        url = self.getCurrentBrowser().url().toString()
         title = self.getCurrentBrowser().title()
 
         # Create a dialog to ask user for bookmark name and optional icon
+        dialog = QDialog(self)
         dialog = QDialog(self)
         layout = QVBoxLayout(dialog)
 
