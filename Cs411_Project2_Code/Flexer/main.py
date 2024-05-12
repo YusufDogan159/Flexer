@@ -105,21 +105,7 @@ class MainWindow(QMainWindow):
 
         # Modify the addTab method
 
-    def addTab(self, url=None):
-        if url is None:
-            url = QUrl('http://google.com')
-        browser = QWebEngineView()
-        browser.setUrl(url)
-        i = self.tabs.addTab(browser, 'New Tab')  # Initial title
-        self.tabs.setCurrentIndex(i)
 
-        # Connect signals
-        browser.urlChanged.connect(lambda q: self.updateUrl(q, browser))
-        browser.loadStarted.connect(lambda: self.onLoadStarted(browser))
-        browser.loadFinished.connect(lambda _: self.onLoadFinished(browser))
-        browser.titleChanged.connect(lambda title: self.updateTabTitle(i, title))
-
-        # Add the updateTabTitle method
 
     def updateTabTitle(self, index, title):
         self.tabs.setTabText(index, title[:15] + '...' if len(title) > 15 else title)  # Limit title length if necessary
