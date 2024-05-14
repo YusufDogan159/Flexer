@@ -25,7 +25,8 @@ class MainWindow(QMainWindow):
 
         navbar = QToolBar()
         self.addToolBar(navbar)
-
+        navbar = QToolBar()
+        self.addToolBar(navbar)
 
         #The paths should be updated in different computer
         new_tab_icon_path = 'C:\\Users\\ysfdg\\Desktop\\Flexer\\images\\new-tab-icon.png'
